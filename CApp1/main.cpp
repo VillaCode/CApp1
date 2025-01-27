@@ -1,11 +1,25 @@
 ﻿#include "pch.h"
+#include <iostream>
+#include <omp.h>
 
-using namespace winrt;
-using namespace Windows::Foundation;
+#define N 1000
+#define chunk 100
+#define mostrar 10
 
-int main()
-{
-    init_apartment();
-    Uri uri(L"http://aka.ms/cppwinrt");
-    printf("Hello, %ls!\n", uri.AbsoluteUri().c_str());
+void imprimeArreglo(float* d);
+
+int main() {
+    std::cout << "Sumando Arreglos en Paralelo!\n";
+
+    float a[N], b[N], c[N];
+    int i;
+
+    for (i = 0; i < N; i++) {
+        a[i] = i * 10;
+        b[i] = (i + 3) * 3.7;
+    }
+
+    int pedazos = chunk;
+
+    return 0;
 }
